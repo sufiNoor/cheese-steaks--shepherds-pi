@@ -18,6 +18,10 @@ video#bgvid {
     background: url(polina.jpg) no-repeat;
     background-size: cover; 
 }
+
+.footer{
+      background-color: rbg(194,194, 163);
+}
 video 
 { 
 	display: block; 

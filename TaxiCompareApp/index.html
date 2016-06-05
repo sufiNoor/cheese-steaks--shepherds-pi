@@ -22,6 +22,7 @@
               google.maps.event.addListener(autocomplete, 'place_changed', function() {
               });
             }
+
         </script>
     <link rel="stylesheet" type="text/css" href="Style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
@@ -79,13 +80,14 @@
 
             <div id="locationField">
             <form role="form" id="address" class="input-group">
-                <input class="form-control" id="autocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text">
+                <input class="form-control" id="autocomplete" placeholder="Enter your address" type="text">
                 <span class="input-group-btn">
                     <button type="button" class="btn btn-default">Go!</button>
                 </span>
             </form>
              </div>
             </div>
+            <div id="loading">Loading...</div>
         </div>
 
         <div class="row">
@@ -138,13 +140,13 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row" id="footer">
             <div class="col-xs-6">
-                <h3>Uber ETA Result</h3>:<p id="eta_uber"></p>
+                <h3>Uber ETA Result</h3><p id="eta_uber"></p>
             </div>
 
             <div class="col-xs-6">
-                <h3>Lyft ETA Result</h3>:<p id="eta_lyft"></p>
+                <h3>Lyft ETA Result</h3><p id="eta_lyft"></p>
             </div>
         </div>
     </div>
@@ -153,7 +155,7 @@
 
             <source src="polina.webm" type="video/webm">
             <source src="polina.mp4" type="video/mp4">
-        </video>-->
+        </video>
     </div>
 <script type="text/javascript">
     var vid = document.getElementById("bgvid"),

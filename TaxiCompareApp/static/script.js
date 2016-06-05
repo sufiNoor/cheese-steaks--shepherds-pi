@@ -1,11 +1,14 @@
 var API_URL = 'http://127.0.0.1:8000/api';
+document.getElementById('loading').style.visibility = 'hidden';
 
 var json;
 var test;
 
 var getData = function() {
-  var pickup = document.getElementById('pickup').value;
+  document.getElementById('loading').style.visibility = 'visible';
+  var pickup = document.getElementById('autocomplete').value;
   d3.json(API_URL, function(error, data) {
+
       console.log(data);
       json = data;
       //d3.select('#results').html(JSON.stringify(data, null, 4));
@@ -40,6 +43,7 @@ d3.select("#address").on("submit", function() {
   var uberType = 'uberPOOL';
   var lyftType = 'Lyft Line';
   show_etas(uberType, lyftType);
+  document.getElementById('loading').style.visibility = 'hidden';
 });
 
 var uberTypeSelect = d3.select('#uber-type select');
@@ -63,4 +67,5 @@ var onDataChange = function(uberType, lyftType){
     'use strict';
     console.log('change data');
     show_etas(uberType, lyftType);
+    document.getElementById('loading').style.visibility = 'hidden';
 }
