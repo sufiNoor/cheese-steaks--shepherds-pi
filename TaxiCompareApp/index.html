@@ -75,30 +75,16 @@
             <div class="col-xs-6 text-center">
                 <h2 class="text-center body">Uber</h2>
 
-                <div class="row">
-
+                 <div class="row">
                     <div class="col-xs-6"> <img class="img-responsive" src="http://cdn.geekwire.com/wp-content/uploads/2016/02/uberriderlogo-e1454443856991.png"
                             alt="uber logo">
                     </div>
                     <div class="col-xs-6">
-                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Uber Services<span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">uberPOOL</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">uberX</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">uberXL</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">UberSELECT</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">UberBLACK</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">UberSUV</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">ASSIST</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">uberTAXI</a></li>
-                        </ul>
+                        <select ng-model='discussionsSelect' class='form-control'>
+                        <option value='Lyft Line'>Lyft Line</option>
+                        <option value='Lyft'>Lyft</option>
+                        <option value='Lyft Plus'>Lyft Plus</option>
+                    </select>
                     </div>
                 </div>
             </div>
@@ -114,23 +100,33 @@
                     </div>
 
                     <div class="col-xs-6">
-                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Lyft Services<span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Lyft Line</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Lyft</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Lyft Plus</a></li>
-                        </ul>
+                        <select ng-model='discussionsSelect' class='form-control'>
+                        <option value='uberPOOL'>uberPOOL</option>
+                        <option value='uberX'>uberX</option>
+                        <option value='uberXL'>uberXL</option>
+                        <option value='UberSELECT'>UberSELECT</option>
+                        <option value='UberBLACK'>UberBLACK</option>
+                        <option value='UberSUV'>UberSUV</option>
+                        <option value='ASSIST'>ASSIST</option>
+                        <option value='uberTAXI'>uberTAXI</option>
+                    </select>
                     </div>
                 </div>
             </div>
             <!--end of container-->
         </div>
-
-
-
-<div id="results"></div>
+        
+        <div class="row">
+            <div class="col-xs-6">
+                <h3>Uber ETA Result:<span id="eta_uber" class="label label-default"></span></h3>
+            </div>
+            
+             <div class="col-xs-6">
+                <h3>Lyft ETA Result:<span id="lyft_uber" class="label label-default"></span></h3>
+            </div>
+        </div>
+    </div>
+    <div id="results"></div>
 
 </body>
 
