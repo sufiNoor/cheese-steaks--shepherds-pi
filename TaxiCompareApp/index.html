@@ -6,9 +6,24 @@
 
     <meta charset="UTF-8">
     <title>Taxi Compare</title>
-
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Latest compiled and minified CSS -->
+     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places">
+            
+        </script>
+        <script>
+            var autocomplete;
+            function initialize() {
+              autocomplete = new google.maps.places.Autocomplete(
+                  /** @type {HTMLInputElement} */(document.getElementById('autocomplete')),
+                  { types: ['geocode'] });
+              google.maps.event.addListener(autocomplete, 'place_changed', function() {
+              });
+            }
+        </script>
+    <link rel="stylesheet" type="text/css" href="Style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
         crossorigin="anonymous">
 
@@ -25,10 +40,13 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
+        <button id="vidpause">Pause</button>
 </head>
 
-<body>
+<body onload="initialize()">
+        <div id="locationField">
+          <input id="autocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text"></input>
+        </div>
 
     <style>
         img {
@@ -57,8 +75,6 @@
                         <label>Enter Pick up location: </label>
                         <input type="to" class="form-control" id="pickup">
                     </div>
-
-
                     <button type="submit" class="btn btn-default">Go!</button>
                 </form>-->
 
@@ -76,7 +92,13 @@
 
         <div class="row">
             <div class="col-xs-6 text-center">
-                <h2 class="text-center body">Uber</h2>
+                <h2 class="text-center body">
+
+
+
+
+
+                Uber</h2>
 
                 <div class="row">
 
@@ -84,24 +106,17 @@
                             alt="uber logo">
                     </div>
                     <div class="col-xs-6">
-                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Uber Services<span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">uberPOOL</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">uberX</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">uberXL</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">UberSELECT</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">UberBLACK</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">UberSUV</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">ASSIST</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">uberTAXI</a></li>
-                        </ul>
+                        
+                    <select ng-model='discussionsSelect' class='form-control'>
+                         <option value='uberPOOL'>uberPOOL</option>
+                         <option value='uberX'>uberX</option>
+                         <option value='uberXL'>uberXL</option>
+                         <option value='UberSELECT'>UberSELECT</option>
+                         <option value='UberBLACK'>UberBLACK</option>
+                         <option value='UberSUV'>UberSUV</option>
+                         <option value='ASSIST'>ASSIST</option>
+                         <option value='uberTAXI'>uberTAXI</option>
+                   </select>
                     </div>
                 </div>
             </div>
@@ -117,20 +132,45 @@
                     </div>
 
                     <div class="col-xs-6">
-                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Lyft Services<span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Lyft Line</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Lyft</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Lyft Plus</a></li>
-                        </ul>
+                    <select ng-model='discussionsSelect' class='form-control'>
+                       <option value='Lyft Line'>Lyft Line</option>
+                       <option value='Lyft'>Lyft</option>
+                       <option value='Lyft Plus'>Lyft Plus</option>
+                   </select>
                     </div>
                 </div>
             </div>
-            <!--end of container-->
         </div>
 
+            <!--end of container-->
+        <video autoplay loop poster="polina.jpg" id="bgvid">
+            <source src="polina.webm" type="video/webm">
+            <source src="polina.mp4" type="video/mp4">
+        </video>
+    </div>
+<script type="text/javascript">
+    var vid = document.getElementById("bgvid"),
+pauseButton = document.getElementById("vidpause");
+function vidFade() {
+    vid.classList.add("stopfade");
+}
+vid.addEventListener('ended', function() {
+    // only functional if "loop" is removed 
+     vid.pause();
+    // to capture IE10
+    vidFade();
+});
+pauseButton.addEventListener("click", function() {
+    vid.classList.toggle("stopfade");
+    if (vid.paused) {
+vid.play();
+        pauseButton.innerHTML = "Pause";
+    } else {
+        vid.pause();
+        pauseButton.innerHTML = "Paused";
+    }
+})
+</script>
 
 
 <div id="results"></div>
