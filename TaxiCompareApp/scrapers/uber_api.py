@@ -1,14 +1,7 @@
-
-import json
-
 from uber_rides.session import Session
 from uber_rides.client import UberRidesClient
 
 from config import UBER_SERVER_TOKEN
-
-
-start_latitude = 37.77
-start_longitude = -122.41
 
 
 def get_uber_eta(long, lat):
