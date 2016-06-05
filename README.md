@@ -2,6 +2,10 @@
 
 ### TaxiCompareApp
 
+Python libraries needed:
+
+`uber_rides`, `googlemaps`
+ 
 Sample data that will be returned from api call to get eta times from uber and lyft:
 
 	[{"company": "lyft", "display_name": "Lyft Line", "eta_seconds": 120}, 
