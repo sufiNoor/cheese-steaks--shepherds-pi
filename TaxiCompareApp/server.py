@@ -1,4 +1,4 @@
-from flask import Flask, request, abort, send_from_directory, render_template
+from flask import Flask, request, abort, send_from_directory, render_template, request
 from pymongo import MongoClient
 import pandas as pd
 
@@ -11,11 +11,13 @@ def root():
     return send_from_directory('.', 'index.html')
 
 
-@app.route("/api/eta")
+@app.route("/api/eta", methods=['POST'])
 def get_country_data():
+    address = request.data['address']
+
     import json
     from scrapers.get_data import get_etas
-    address = 'Constitution Ave NW & 10th St NW, Washington, DC'
+    #address = 'Constitution Ave NW & 10th St NW, Washington, DC'
     estimates = get_etas(address)
 
     if len(estimates) > 0 :
