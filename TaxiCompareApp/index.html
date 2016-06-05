@@ -22,7 +22,9 @@
     <!-- Latest compiled and minified JavaScript -->
     <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
         crossorigin="anonymous"></script>-->
-
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -30,25 +32,27 @@
 
     <style>
         img {
-            width: 300px;
+            width: 275px;
+        }
+        
+        .header {
+            padding: 20px;
+        }
+        
+        .body {
+            padding: 40px;
         }
     </style>
 
 
-
     <div class="container">
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-xs-12 header">
                 <h1 class="text-center">Taxi Compare</h1>
+            </div>
 
-                <!--
-                <form method="post">
-                Enter Pick up location: <input type="text" name="address" class="form-control"></input>
-                <div class="form-group"><input type="submit" value="Signup" class="btn btn-default"></input></div>
-                </form>
-                -->
 
-                <form role="form" id="address" >
+                <!--<form role="form" id="address3">
                     <div class="form-group">
                         <label>Enter Pick up location: </label>
                         <input type="to" class="form-control" id="pickup">
@@ -56,29 +60,76 @@
 
 
                     <button type="submit" class="btn btn-default">Go!</button>
+                </form>-->
+
+            <div class="col-xs-12">
+
+                <form role="form" id="address" class="input-group">
+                    <input type="text" class="form-control" id="pickup" placeholder="Search for...">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default">Go!</button>
+                    </span>
                 </form>
 
             </div>
-            <div class="row">
-                <div class="col-xs-6 text-center">
-                    <h2 class="">Uber</h2>
-                    <img class="img-responsive" src="http://cdn.geekwire.com/wp-content/uploads/2016/02/uberriderlogo-e1454443856991.png" alt="uber logo">
-                    <!-- Large button group -->
+        </div>
 
+        <div class="row">
+            <div class="col-xs-6 text-center">
+                <h2 class="text-center body">Uber</h2>
+
+                <div class="row">
+
+                    <div class="col-xs-6"> <img class="img-responsive" src="http://cdn.geekwire.com/wp-content/uploads/2016/02/uberriderlogo-e1454443856991.png"
+                            alt="uber logo">
+                    </div>
+                    <div class="col-xs-6">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Uber Services<span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">uberPOOL</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">uberX</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">uberXL</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">UberSELECT</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">UberBLACK</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">UberSUV</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">ASSIST</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">uberTAXI</a></li>
+                        </ul>
+                    </div>
                 </div>
-
-                <div class="col-xs-6 text-center">
-                    <h2 class="text-center">Lyft</h2>
-                    <img class="img-responsive" src="http://cdn.geekwire.com/wp-content/uploads/2014/12/logo_mighty_pink.png" alt="lyft logo">
-                    <!-- Large button group -->
-
-
-                </div>
-                
-                
-                
-                <!--end of container-->
             </div>
+
+
+
+            <div class="col-xs-6 text-center">
+                <h2 class="text-center body">Lyft</h2>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <img class="img-responsive" src="http://cdn.geekwire.com/wp-content/uploads/2014/12/logo_mighty_pink.png" alt="lyft logo">
+                        <!-- Large button group -->
+                    </div>
+
+                    <div class="col-xs-6">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Lyft Services<span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Lyft Line</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Lyft</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Lyft Plus</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--end of container-->
+        </div>
 
 
 

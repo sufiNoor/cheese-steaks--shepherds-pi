@@ -5,9 +5,13 @@ d3.select("#address").on("submit", function() {
   var pickup = document.getElementById('pickup').value;
 
   d3.json(API_URL, function(error, data) {
+      console.log(data);
+
+
       d3.select('#results').html(JSON.stringify(data, null, 4));
     })
    .header("Content-Type","application/json")
    .send("POST", JSON.stringify({address: pickup}));
 
 });
+
