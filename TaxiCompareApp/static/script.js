@@ -1,7 +1,18 @@
 var API_URL = 'http://127.0.0.1:8000/api';
 document.getElementById('loading').style.visibility = 'hidden';
 
-var json;
+var json = [{"company": "lyft", "display_name": "Lyft Line", "eta_seconds": 120},
+	{"company": "lyft", "display_name": "Lyft", "eta_seconds": 120},
+	{"company": "lyft", "display_name": "Lyft Plus", "eta_seconds": 480},
+	{"company": "uber", "display_name": "uberPOOL", "eta_seconds": 120},
+	{"company": "uber", "display_name": "uberX", "eta_seconds": 120},
+	{"company": "uber", "display_name": "uberXL", "eta_seconds": 360},
+	 {"company": "uber", "display_name": "UberSELECT", "eta_seconds": 180},
+	 {"company": "uber", "display_name": "UberBLACK", "eta_seconds": 180},
+	 {"company": "uber", "display_name": "UberSUV", "eta_seconds": 180},
+	 {"company": "uber", "display_name": "ASSIST", "eta_seconds": 300},
+	 {"company": "uber", "display_name": "uberTAXI", "eta_seconds": 360}]
+;
 var test;
 
 var getData = function() {
@@ -39,7 +50,7 @@ var show_etas = function(uberType, lyftType) {
 d3.select("#address").on("submit", function() {
   console.log('test');
   d3.event.preventDefault();
-  getData();
+  //getData();
   var uberType = 'uberPOOL';
   var lyftType = 'Lyft Line';
   show_etas(uberType, lyftType);
