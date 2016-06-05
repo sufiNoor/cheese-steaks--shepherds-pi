@@ -20,71 +20,49 @@
 </head>
 
 <body>
-    <script>
-
-    </script>
+    <style>
+        img {
+            width: 300px;
+        }
+    </style>
 
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
                 <h1 class="text-center">Taxi Compare</h1>
-                <form action="" methods="">
+                <form role="form" id="address" >
                     <div class="form-group">
-                        <label form="to">To:</label>
+                        <label for="to">To:</label>
                         <input type="to" class="form-control" id="to">
                     </div>
                     <div class="form-group">
-                        <label form="from">From:</label>
+                        <label for="from">From:</label>
                         <input type="from" class="form-control" id="from">
                     </div>
+                    <button onclick="myFunction()" type="submit" class="btn btn-default">Go!</button>
                 </form>
+
             </div>
             <div class="row">
-                <div class="col-xs-6">
-                    <h2 class="text-center">Uber</h2>
-                    <img src="http://media5.starkinsider.com/wordpress/wp-content/uploads/2016/03/uber-logo-new.jpg?f6ccd2" alt="Mountain View"
-                        style="width:304px;height:228px;">
-                     <!-- Large button group -->
-                    <div class="btn-group">
-                        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PiCK Uber type</button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">uberPOOL</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">uberX</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">uberXL</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">UberSELECT</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">UberBLACK</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">uberSUV</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">ASSIST</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">uberTAXI</a>
-                        </div>
-                    </div>   
-                </div>
-
-                <div class="col-xs-6">
-                    <h2 class="text-center">Lyft</h2>
-                    <img src="http://ridesharedashboard.com/wp-content/uploads/2015/05/lyft_logo.png" alt="Mountain View" style="width:304px;height:228px;">
+                <div class="col-xs-6 text-center">
+                    <h2 class="">Uber</h2>
+                    <img class="img-responsive" src="http://cdn.geekwire.com/wp-content/uploads/2016/02/uberriderlogo-e1454443856991.png" alt="uber logo">
                     <!-- Large button group -->
-                    <div class="btn-group">
-                        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pick lyft type</button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Lyft Line</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Lyft</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Lyft Plus</a>
-                        </div>
-                    </div>
+
                 </div>
 
+                <div class="col-xs-6 text-center">
+                    <h2 class="text-center">Lyft</h2>
+                    <img class="img-responsive" src="http://cdn.geekwire.com/wp-content/uploads/2014/12/logo_mighty_pink.png" alt="lyft logo">
+                    <!-- Large button group -->
+
+
+                </div>
+                
+                
+                
+                <!--end of container-->
             </div>
-        </div>
 
 
 
