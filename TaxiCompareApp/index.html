@@ -44,9 +44,6 @@
 </head>
 
 <body onload="initialize()">
-        <div id="locationField">
-          <input id="autocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text"></input>
-        </div>
 
     <style>
         img {
@@ -80,13 +77,14 @@
 
             <div class="col-xs-12">
 
-                <form role="form" id="address" class="input-group">
-                    <input type="text" class="form-control" id="pickup" placeholder="Search for...">
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default">Go!</button>
-                    </span>
-                </form>
-
+            <div id="locationField">
+            <form role="form" id="address" class="input-group">
+                <input class="form-control" id="autocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text">
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default">Go!</button>
+                </span>
+            </form>
+             </div>
             </div>
         </div>
 
